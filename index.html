@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>李文琪 生日快乐</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <style type="text/css">
+        @font-face {
+            font-family: digit;
+            src: url('digital-7_mono.ttf') format("truetype");
+        }
+    </style>
+    <link href="css/default.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+</head>
+<body>
+    <div id="mainDiv">
+        <div id="content">
+            <div id="code">
+                <span class="comments">哈哈哈</span>
+                <br />
+                <span class="comments">终于知道你生日啦</span>
+                <br />
+                <span class="comments">你就是故意发条微博让我知道的对不对</span>
+                <br />
+                <span class="comments">去年6月21号我加你好友</span>
+                <br />
+                <span class="comments">到现在为止已经四百多天啦</span>
+                <br />
+                <span class="comments">我记得你当时说你不是一个好追的姑娘</span>
+                <br />
+                <span class="comments">四百多天</span>
+                <br />
+                <span class="comments">我可真体会到了你有多难追</span>
+                <br />
+                <span class="comments">哎</span>
+                <br />
+                <span class="comments">你这个人真是太差劲不分好坏</span>
+                <br />
+                <span class="comments">我对你好</span>
+                <br />
+                <span class="comments">你却为难我</span>
+                <br />
+                <span class="comments">你说人就是那么奇妙</span>
+                <br />
+                <span class="comments">咱们两个人折腾了那么久</span>
+                <br />
+                <span class="comments">说分的开吧，也分不开</span>
+                <br />
+                <span class="comments">唐玄奘经历了八十一难</span>
+                <br />
+                <span class="comments">我可不止经历八十一难</span>
+                <br />
+                <span class="comments">差不多该修成正果了吧</span>
+                <br />
+                <span class="comments">不管明天怎样</span>
+                <br />
+                <span class="comments">今天先祝你生日快乐吧</span>
+                <br />
+                <span class="comments">这个网页十月十九号就上线了</span>
+                <br />
+            </div>
+            <div id="loveHeart">
+                <canvas id="garden"></canvas>
+                <div id="words">
+                    <div id="messages">
+                        文琪，这已经是我们认识的第
+                        <div id="elapseClock"></div>
+                    </div>
+                    <div id="loveu">
+                        Happy Birthday!
+                        <br/>Love you forever and ever.
+                        <div class="signature">- Qiong</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var offsetX = $("#loveHeart").width() / 2;
+        var offsetY = $("#loveHeart").height() / 2 - 55;
+        var together = new Date();
+        together.setFullYear(2016, 6, 21);
+        together.setHours(0);
+        together.setMinutes(0);
+        together.setSeconds(0);
+        together.setMilliseconds(0);
+        if (!document.createElement('canvas').getContext) {
+            var msg = document.createElement("div");
+            msg.id = "errorMsg";
+            msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+";
+            document.body.appendChild(msg);
+            $("#code").css("display", "none")
+            $("#copyright").css("position", "absolute");
+            $("#copyright").css("bottom", "10px");
+            document.execCommand("stop");
+        } else {
+            setTimeout(function () {
+                startHeartAnimation();
+            }, 5000);
+            timeElapse(together);
+            setInterval(function () {
+                timeElapse(together);
+            }, 500);
+            adjustCodePosition();
+            $("#code").typewriter();
+        }
+    </script>
+    <audio src="qingge.mp3" autoplay="true" />
+</body>
+</html>
